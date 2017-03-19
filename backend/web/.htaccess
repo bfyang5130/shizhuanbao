@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Options +FollowSymLinks
 IndexIgnore /
 RewriteEngine on
@@ -6,3 +7,13 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # Otherwise forward it to index.php
 RewriteRule . index.php
+=======
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php [L]
+</IfModule>
+>>>>>>> origin/master
