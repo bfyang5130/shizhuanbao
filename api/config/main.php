@@ -1,9 +1,7 @@
 <?php
+
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+        require(__DIR__ . '/../../common/config/params.php'), require(__DIR__ . '/../../common/config/params-local.php'), require(__DIR__ . '/params.php'), require(__DIR__ . '/params-local.php')
 );
 
 return [
@@ -36,14 +34,28 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '.html',
             'rules' => [
+                "<controller:\w+>/<action:\w+>" => "<controller>/<action>"
             ],
         ],
-        */
+    ],
+    'modules' => [
+        'rabbit' => [
+            'class' => 'api\modules\rabbit\RabbitMQ',
+        ],
+    ],
+    'controllerMap' => [
+        'rabbit' => [
+            'class' => 'webtoucher\amqp\controllers\AmqpListenerController',
+            'interpreters' => [
+                'my-exchange' => 'app\components\RabbitInterpreter', // interpreters for each exchange
+            ],
+            'exchange' => 'my-exchange', // default exchange
+        ],
     ],
     'params' => $params,
 ];
