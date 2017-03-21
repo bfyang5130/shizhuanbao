@@ -36,14 +36,17 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => TRUE,
+            'suffix' => '.html',
             'rules' => [
+                '' => 'site/index',
+                'v1/<controller:\w+>/<action:\w+>'=>'v1/<controller>/<action>',
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>'
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
