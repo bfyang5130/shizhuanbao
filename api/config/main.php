@@ -37,9 +37,12 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => TRUE,
             'suffix' => '.html',
             'rules' => [
-                "<controller:\w+>/<action:\w+>" => "<controller>/<action>"
+                '' => 'site/index',
+                'v1/<controller:\w+>/<action:\w+>'=>'v1/<controller>/<action>',
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>'
             ],
         ],
     ],
