@@ -2,12 +2,12 @@
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \frontend\models\ResetPasswordForm */
+/* @var $model \api\models\ResetPasswordForm */
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Reset password';
+$this->title = '重置密码';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-reset-password">
