@@ -118,3 +118,6 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.xx_top_navbar{
+    height: 30px;
+}
