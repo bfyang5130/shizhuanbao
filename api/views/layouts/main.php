@@ -71,7 +71,6 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">版权所有<a href="http://www.miitbeian.gov.cn" target="_blank" rel="external nofollow">粤ICP备13068737号-1</a> <?= date('Y') ?></p>
-
         <p class="pull-right">深圳市寻想网络科技</p>
     </div>
 </footer>

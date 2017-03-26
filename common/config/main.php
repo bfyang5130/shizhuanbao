@@ -5,6 +5,6 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'language'=>'zh-CN'
+        'language'=>'zh-CN',
     ],
 ];
