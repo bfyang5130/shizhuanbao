@@ -1,4 +1,8 @@
-<link href="/css/flush.css?v="<?= date("YmdHis") ?> rel="stylesheet">
+<?php
+$this->registerCssFile("/css/flush.css?v=".date("YmdHis"));
+$this->registerJsFile("/js/flush.js?v=".date("YmdHis"),['depends'=>['yii\web\YiiAsset']]);
+?>
+<link href="/css/flush.css?v=<?= date("YmdHis") ?>" rel="stylesheet">
 <div class="warp clear">
     <div class="bannerbox">
         <div class="nav">

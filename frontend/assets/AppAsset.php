@@ -15,7 +15,7 @@ class AppAsset extends AssetBundle
        // 'css/base.css',
     ];
     public $js = [
-        'js/flush.js'
+      //  'js/flush.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
