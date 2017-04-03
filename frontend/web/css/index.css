@@ -11,4 +11,12 @@
 .out-box .back-box{border:1px solid #ddd;background-color:#d9edf7;z-index: 1;-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);transform: rotateY(180deg); } 
 
 .filp-container ul li:hover .out-box{-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);transform: rotateY(180deg);} 
-.filp-container ul li:hover .back-box{z-index: 3; } 
+.filp-container ul li:hover .back-box{z-index: 3; }
+.index-main-h1{height:50px;line-height: 50px;}
+.example-container ul{width:100%;display: inline-block;}
+.example-container ul li {width: 33.3%;min-height: 300px;margin-top:15px;display: inline;float: left; }
+.example-box{width:95%;min-height: 300px;margin: 0 auto;border: 1px solid #ddd;}
+.example-box h3{font-size: 16px;line-height: 50px;}
+.news-container ul{width:100%;display: inline-block;}
+.news-container ul li {width: 25%;min-height: 406px;margin-top:15px;display: inline;float: left; }
+.news-box{width:95%;min-height: 406px;margin: 0 auto;border: 1px solid #ddd;}

@@ -13,4 +13,13 @@ $(".box-flip").bind("mouseover", function () {
         $(this).children(2).addClass("in").removeClass("out");
     }, 225);
 });
+$(document).ready(function () {
+    $(".second_tab").champ({
+        plugin_type: "tab",
+        side: "right",
+        active_tab: "1",
+        controllers: "false"
+    });
+
+});
 

@@ -8,6 +8,7 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+$this->registerJsFile("/js/jquery.multipurpose_tabcontent.js?v=".date("YmdHis"),['depends'=>['yii\web\YiiAsset']]);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
