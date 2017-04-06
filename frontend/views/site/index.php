@@ -83,24 +83,24 @@ $this->registerCssFile("/css/index.css?v=" . date("YmdHis"));
             <div class="news-box">
                 <img src="/images/news2.png"/>
                 <h3>区域链技术快速漫延</h3>
-                <img src="/images/news2.png"/>
-                <h3>智能式餐厅</h3>
+                <img src="/images/news3.jpg"/>
+                <h3>无人机呈爆发式增长</h3>
             </div>
         </li>
         <li>
             <div class="news-box">
-                <img src="/images/news2.png"/>
-                <h3>智能式餐厅</h3>
-                <img src="/images/news2.png"/>
-                <h3>智能式餐厅</h3>
+                <img src="/images/news4.png"/>
+                <h3>共同打造VR视频直播生态链</h3>
+                <img src="/images/news5.png"/>
+                <h3>首发共享单车骑行指数</h3>
             </div>
         </li>
         <li>
             <div class="news-box">
-                <img src="/images/news2.png"/>
-                <h3>智能式餐厅</h3>
-                <img src="/images/news2.png"/>
-                <h3>智能式餐厅</h3>
+                <img src="/images/news6.png"/>
+                <h3>AI在语音和图像识别领域很大的发展</h3>
+                <img src="/images/news7.jpg"/>
+                <h3>“黑科技”机器人艺人亮相欢乐谷</h3>
             </div>
         </li>
     </ul>
