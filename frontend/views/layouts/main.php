@@ -30,9 +30,7 @@ $this->registerJsFile("/js/jquery.multipurpose_tabcontent.js?v=".date("YmdHis"),
         </div>
         <?= $content ?>
         <div class="warp clear bgbottom">
-            <p class="pull-left">版权所有<a href="http://www.miitbeian.gov.cn" target="_blank" rel="external nofollow">粤ICP备13068737号-1</a> <?= date('Y') ?></p>
-
-            <p class="pull-right">深圳市寻想网络科技</p>
+            <?= $this->render("footer.php") ?>
         </div>
 
         <?php $this->endBody() ?>

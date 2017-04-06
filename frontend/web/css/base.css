@@ -22,3 +22,10 @@ a:hover{color: #0b70be; text-decoration: none;  }
 .box{margin:0 auto;padding:15px;border:1px solid #ddd;}
 .bgbottom{background-color: #ddd;padding:15px;min-height: 30px;line-height: 30px;margin-top: 25px;}
 .text-left{text-align: left;}
+.bottom-container ul{width:100%;display: inline-block;}
+.bottom-container ul li {width: 33.3%;min-height: 150px;margin-top:15px;display: inline;float: left; }
+.bottom-box{width:100%;min-height: 150px;margin: 0 auto;}
+.bottom-box img{margin: 0px 10px;}
+.friend-container{border-top:1px dotted #999;}
+.friend-container ul{display: inline-block;margin: 0 auto;}
+.friend-container ul li {padding:10px 20px;margin-top:15px;display: inline;float: left; }
