@@ -18,7 +18,9 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "webtoucher/yii2-amqp": "*"
+        "webtoucher/yii2-amqp": "*",
+        "callmez/yii2-wechat-sdk": "dev-master",
+        "fxp/composer-asset-plugin": "~1.2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -26,7 +28,8 @@
         "yiisoft/yii2-faker": "~2.0.0",
 
         "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1"
+        "codeception/verify": "~0.3.1",
+        "bazilio/yii2-stubs-generator": "^1.2"
     },
     "config": {
         "process-timeout": 1800
