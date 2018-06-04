@@ -75,10 +75,8 @@ class SiteController extends Controller
     {
         //加入接口验证
         $wechat=Yii::$app->wechat;
-        $check=$wechat->checkSignature();
-        echo $check;
+        $wechat->checkSignature();
         \Yii::$app->end();
-        return $this->render('index');
     }
 
     /**
