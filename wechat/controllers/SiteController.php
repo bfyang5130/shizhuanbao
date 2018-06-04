@@ -1,6 +1,7 @@
 <?php
 namespace wechat\controllers;
 
+use callmez\wechat\sdk\Wechat;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -72,6 +73,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        //加入接口验证
+        $wechat=Yii::$app->wechat;
+        $check=$wechat->checkSignature();
+        echo $check;
+        \Yii::$app->end();
         return $this->render('index');
     }
 

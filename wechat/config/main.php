@@ -11,7 +11,7 @@ return [
     'controllerNamespace' => 'wechat\controllers',
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-frontend',
+            'csrfParam' => '_csrf-wechat',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -20,7 +20,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-api',
+            'name' => 'advanced-wechat',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -45,6 +45,7 @@ return [
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>'
             ],
         ],
+
     ],
     'modules' => [
         'rabbit' => [

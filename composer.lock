@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d8f6b417e6b6301c0586ce2e5b53240c",
-    "content-hash": "5b21bad41f3d909803fc1de0753276a5",
+    "hash": "2000ed4d5dd1ec712635cb15540ba419",
+    "content-hash": "875f45be2bb682388ad8177d307d4ca9",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -870,6 +870,48 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "bazilio/yii2-stubs-generator",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bazilio91/yii2-stubs-generator.git",
+                "reference": "f45d0e96396834692a18724c497c3be4f280f74a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bazilio91/yii2-stubs-generator/zipball/f45d0e96396834692a18724c497c3be4f280f74a",
+                "reference": "f45d0e96396834692a18724c497c3be4f280f74a",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "bazilio\\stubsgenerator\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vasily Ostanin",
+                    "email": "bazilio91@gmail.com"
+                }
+            ],
+            "description": "Yii2 component stubs generator for Yii::$app",
+            "keywords": [
+                "autocomplete",
+                "phpstorm",
+                "stubs",
+                "yii2"
+            ],
+            "time": "2018-03-28 07:19:46"
+        },
         {
             "name": "behat/gherkin",
             "version": "v4.5.1",
