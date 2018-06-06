@@ -24,6 +24,7 @@ class WechatTextService {
         $wechat=\Yii::$app->wechat;
         $content="好了好了，我知道了，我现在又能访问了";
         $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
-        WechatAutoReplyTempletService::sendAutoReply($templet);
+        \Yii::error($templet);
+        echo $templet;
     }
 }

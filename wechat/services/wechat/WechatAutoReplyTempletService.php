@@ -34,20 +34,4 @@ class WechatAutoReplyTempletService {
         $content="好了好了，我知道了，我现在又能访问了";
         \Yii::$app->wechat->sendText($returnData['FromUserName'],$content);
     }
-
-    /**
-     * 整合的发送文本信息方法
-     * @param string $templet
-     * @return bool
-     */
-    public static function sendAutoReply($templet){
-
-        $result=\Yii::$app->wechat->httpPost("",[$templet]);
-        if(isset($result['errmsg']) && $result['errmsg'] == 'ok'){
-            return true;
-        }else{
-            \Yii::error($result);
-            return false;
-        }
-    }
 }
