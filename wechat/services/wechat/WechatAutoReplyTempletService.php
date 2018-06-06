@@ -22,8 +22,8 @@ class WechatAutoReplyTempletService {
      * @return string $resultStr
      */
     public static function textTemplet($returnData,$content) {
-        $textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[%s]]></Content><MsgId>%d</MsgId></xml>";
-        $resultStr = sprintf($textTpl, $returnData['FromUserName'], $returnData['ToUserName'], time(), $content, $returnData['MsgId']);
+        $textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[%s]]></Content></xml>";
+        $resultStr = sprintf($textTpl, $returnData['FromUserName'], $returnData['ToUserName'], time(), $content);
         return $resultStr;
     }
     /**
