@@ -8,6 +8,8 @@ namespace wechat\services;
  * and open the template in the editor.
  */
 
+use wechat\services\wechat\WechatTextService;
+
 /**
  * Description of UserService
  *
@@ -33,8 +35,32 @@ class WechatService {
         } else {
             //解析服务器反馈的参数并决定进入那个部分处理
             $returnData=$wechat->parseRequestData();
-            \Yii::error($returnData);
+            if(isset($returnData['MsgType'])){
+                $msgType=$returnData['MsgType'];
+                switch ($msgType) {
+                    case 'text':
+                        WechatTextService::fitInit($returnData);
+                        break;
+                    case 'click':
+                        WechatTextService::fitInit($returnData);
+                        break;
+                    default:
+                        WechatTextService::fitInit($returnData);
+                        break;
+                }
+            }else{
+                \Yii::error($returnData);
+            }
         }
     }
 
+    public static function fitText(){
+
+    }
+    public static function fitClick(){
+
+    }
+    public static function fitDefault(){
+
+    }
 }
