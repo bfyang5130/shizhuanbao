@@ -16,10 +16,13 @@ namespace wechat\services\wechat;
 class WechatTextService {
 
     /**
-     * @param $returnData
+     * 基本的发送文本信息，后面会进行扩充
+     * @param array $returnData
      */
     public static function fitInit($returnData) {
+        $wechat=\Yii::$app->wechat;
         $content="好了好了，我知道了，我现在又能访问了";
-        \Yii::$app->wechat->sendText($returnData['FromUserName'],$content);
+        $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
+        WechatAutoReplyTempletService::sendAutoReply($templet);
     }
 }
