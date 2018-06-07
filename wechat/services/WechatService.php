@@ -8,6 +8,7 @@ namespace wechat\services;
  * and open the template in the editor.
  */
 
+use wechat\services\wechat\WechatClickService;
 use wechat\services\wechat\WechatTextService;
 
 /**
@@ -42,7 +43,7 @@ class WechatService {
                         WechatTextService::fitInit($returnData);
                         break;
                     case 'click':
-                        WechatTextService::fitInit($returnData);
+                        WechatClickService::fitInit($returnData);
                         break;
                     default:
                         WechatTextService::fitInit($returnData);
