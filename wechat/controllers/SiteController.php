@@ -75,6 +75,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        //使用微信服务来处理信息
         WechatService::baseFit();
         \Yii::$app->end();
     }
