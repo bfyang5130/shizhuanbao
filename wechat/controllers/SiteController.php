@@ -48,7 +48,6 @@ class SiteController extends Controller
         //使用微信服务来处理信息
         $wechat=\Yii::$app->wechat;
         $menu=[
-            [
                 [
                     "name"=>"加入联盟",
                      "sub_button"=>[
@@ -72,7 +71,6 @@ class SiteController extends Controller
                         ["type"=>"click","name"=>"扫一扫","key"=>"weixin_scan"]
                     ]
                 ]
-            ]
         ];
         if($wechat->createMenu($menu)){
             echo "ok";
