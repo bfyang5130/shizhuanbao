@@ -22,7 +22,7 @@ class WechatTextService {
     public static function fitInit($returnData) {
         \Yii::error($returnData);
         $wechat=\Yii::$app->wechat;
-        $content="好了好了，我知道了，我现在又能访问了";
+        $content="当前功能还没有实现哦。";
         $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
         \Yii::error($templet);
         echo $templet;

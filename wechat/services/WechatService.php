@@ -9,6 +9,7 @@ namespace wechat\services;
  */
 
 use wechat\services\wechat\WechatClickService;
+use wechat\services\wechat\WechatEventService;
 use wechat\services\wechat\WechatTextService;
 
 /**
@@ -42,8 +43,8 @@ class WechatService {
                     case 'text':
                         WechatTextService::fitInit($returnData);
                         break;
-                    case 'click':
-                        WechatClickService::fitInit($returnData);
+                    case 'event':
+                        WechatEventService::fitInit($returnData);
                         break;
                     default:
                         WechatTextService::fitInit($returnData);
@@ -53,15 +54,5 @@ class WechatService {
                 \Yii::error($returnData);
             }
         }
-    }
-
-    public static function fitText(){
-
-    }
-    public static function fitClick(){
-
-    }
-    public static function fitDefault(){
-
     }
 }
