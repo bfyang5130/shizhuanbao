@@ -43,7 +43,7 @@ class WechatClickService {
      * @param $returnData
      */
     public static function lotteryMoney($returnData){
-        $number=rand(1,1000)/100;
+        $number=rand(1,1000);
         if($number>100){
             $money=rand(1,9)/100;
         }elseif($number>10){
