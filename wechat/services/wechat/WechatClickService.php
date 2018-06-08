@@ -8,6 +8,8 @@ namespace wechat\services\wechat;
  * and open the template in the editor.
  */
 
+use common\models\User;
+
 /**
  * Description of UserService
  *
@@ -31,6 +33,9 @@ class WechatClickService {
                 break;
             case 'weixin_clickthree':
                 self::lotteryCoupon($returnData);
+                break;
+            case 'weixin_joinus':
+                self::joinUs($returnData);
                 break;
             default:
                 self::defaultClick($returnData);
@@ -93,5 +98,20 @@ class WechatClickService {
         $content="当前功能还没有被实现哦，请稍侯重试";
         $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
         echo $templet;
+    }
+    /**
+     * 注册用户信息到数据库
+     * @param array $returnData
+     */
+    public static function joinUs($returnData){
+         //查询用户是否存在
+        $user=User::findByUsername();
+        if(!$user){
+
+        }else{
+            $content="尊敬的用户，您已成功加入会员。无需再加入";
+            $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
+            echo $templet;
+        }
     }
 }
