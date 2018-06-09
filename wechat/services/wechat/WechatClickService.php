@@ -112,19 +112,19 @@ class WechatClickService {
      */
     public static function joinUs($returnData){
         //先从缓冲查
-        $userWechatInfo=\Yii::$app->cache->get($returnData['openid']);
+        $userWechatInfo=\Yii::$app->cache->get($returnData['FromUserName']);
         if(!$userWechatInfo){
             //查询用户是否存在
             $userSer=new UserService();
-            $user=$userSer->findUserByWechaId($returnData['openid']);
+            $user=$userSer->findUserByWechaId($returnData['FromUserName']);
             if(!$user){
               $newUser= new User();
-              $newUser->wechat_id=$newUser->username=$returnData['openid'];
+              $newUser->wechat_id=$newUser->username=$returnData['FromUserName'];
               $newUser->addtime=time();
               $newUser->addip=\Yii::$app->request->remoteIP;
               if($newUser->save()){
                   $userWechatInfo['user_id']=\Yii::$app->db->lastInsertID;
-                  \Yii::$app->cache->set($returnData['openid'],$userWechatInfo);
+                  \Yii::$app->cache->set($returnData['FromUserName'],$userWechatInfo);
                   $content=sprintf("恭喜您已成功加入联盟，您的终生代号为：%s",$userWechatInfo['user_id']);
                   $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
                   echo $templet;
@@ -137,7 +137,7 @@ class WechatClickService {
               }
             }else{
                 $user_id=$userWechatInfo['user_id']=$user->user_id;
-                \Yii::$app->cache->set($returnData['openid'],$userWechatInfo);
+                \Yii::$app->cache->set($returnData['FromUserName'],$userWechatInfo);
                 $content=sprintf("尊敬的 %u，您已成功加入会员。无需再加入",$user_id);
                 $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
                 echo $templet;
