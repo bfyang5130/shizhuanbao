@@ -97,8 +97,8 @@ class WechatClickService
             }
              //调用存储过程给用户增加中奖记录
             try {
-                $connection = Yii::app()->db;
-                $ip = Yii::app()->request->userHostAddress;
+                $connection = \Yii::app()->db;
+                $ip = \Yii::app()->request->userHostAddress;
                 $sqlstring = "'{$userInfo['id']}','{$money}','{$ip}',@outstates,@outremark";
                 $command = $connection->createCommand("CALL p_lotteryMoney(" . $sqlstring . ")");
                 $command->execute();
