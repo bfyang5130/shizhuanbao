@@ -99,7 +99,7 @@ class WechatClickService
             try {
                 $connection = \Yii::$app->db;
                 $ip = \Yii::$app->request->getUserIP();
-                $sqlstring = "'{$userInfo['id']}','{$money}','{$ip}',@outstates,@outremark";
+                $sqlstring = "'{$userInfo['user_id']}','{$money}','{$ip}',@outstates,@outremark";
                 $command = $connection->createCommand("CALL p_lotteryMoney(" . $sqlstring . ")");
                 $command->execute();
                 $outresults = $connection->createCommand("select @outstates as states,@outremark as remark")->query();
