@@ -67,9 +67,10 @@ class SiteController extends Controller
                 [
                     "name"=>"查询",
                     "sub_button"=>[
-                        ["type"=>"click","name"=>"我的财产","key"=>"weixin_account"],
-                        ["type"=>"click","name"=>"订单状态","key"=>"weixin_orderstatus"],
-                        ["type"=>"click","name"=>"扫一扫","key"=>"weixin_scan"]
+                        ["type"=>"click","name"=>"今日抽奖","key"=>"weixin_todaylottery"],
+                        ["type"=>"click","name"=>"扫一扫","key"=>"weixin_scan"],
+                        ["type"=>"click","name"=>"订单","key"=>"weixin_orderstatus"],
+                        ["type"=>"click","name"=>"资产","key"=>"weixin_account"]
                     ]
                 ]
         ];

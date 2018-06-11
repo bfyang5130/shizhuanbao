@@ -9,6 +9,7 @@ namespace wechat\services\wechat;
  */
 
 use common\models\User;
+use common\services\UserService;
 
 /**
  * Description of UserService
@@ -35,6 +36,12 @@ class WechatClickService {
                 self::lotteryCoupon($returnData);
                 break;
             case 'weixin_joinus':
+                self::joinUs($returnData);
+                break;
+            case 'weixin_right':
+                self::lotteryCoupon($returnData);
+                break;
+            case 'weixin_todaylottery':
                 self::joinUs($returnData);
                 break;
             default:
@@ -104,12 +111,40 @@ class WechatClickService {
      * @param array $returnData
      */
     public static function joinUs($returnData){
-         //查询用户是否存在
-        $user=User::findByUsername();
-        if(!$user){
-
+        //先从缓冲查
+        $userWechatInfo=\Yii::$app->cache->get($returnData['FromUserName']);
+        if(!$userWechatInfo){
+            //查询用户是否存在
+            $userSer=new UserService();
+            $user=$userSer->findUserByWechaId($returnData['FromUserName']);
+            if(!$user){
+              $newUser= new User();
+              $newUser->wechat_id=$newUser->username=$returnData['FromUserName'];
+              $newUser->addtime=time();
+              $newUser->addip=\Yii::$app->request->remoteIP;
+              if($newUser->save()){
+                  $userWechatInfo['user_id']=\Yii::$app->db->lastInsertID;
+                  \Yii::$app->cache->set($returnData['FromUserName'],$userWechatInfo);
+                  $content=sprintf("恭喜您已成功加入联盟，您的终生代号为：%s",$userWechatInfo['user_id']);
+                  $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
+                  echo $templet;
+                  \Yii::$app->end();
+              }else{
+                  $content="服务器歇菜了，稍侯再捅它吧。";
+                  $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
+                  echo $templet;
+                  \Yii::$app->end();
+              }
+            }else{
+                $user_id=$userWechatInfo['user_id']=$user->user_id;
+                \Yii::$app->cache->set($returnData['FromUserName'],$userWechatInfo);
+                $content=sprintf("尊敬的 %u，您已成功加入会员。无需再加入",$user_id);
+                $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
+                echo $templet;
+            }
         }else{
-            $content="尊敬的用户，您已成功加入会员。无需再加入";
+            $user_id=$userWechatInfo['user_id'];
+            $content=sprintf("尊敬的 %s，您已成功加入会员。无需再加入",$user_id);
             $templet=WechatAutoReplyTempletService::textTemplet($returnData,$content);
             echo $templet;
         }
