@@ -41,7 +41,7 @@ class WechatClickService
                 self::joinUs($returnData);
                 break;
             case 'weixin_right':
-                self::lotteryCoupon($returnData);
+                self::showRightDetail($returnData);
                 break;
             case 'weixin_todaylottery':
                 self::joinUs($returnData);
@@ -233,5 +233,24 @@ class WechatClickService
             }
         }
         return $userWechatInfo;
+    }
+    /**
+     *
+     */
+    public static function showRightDetail($returnData)
+    {
+        //获得用户信息
+        $userInfo=self::findMyUser_id($returnData);
+        if(empty($userInfo)){
+            $content = sprintf("尊敬的用户:\n");
+            $content.="您可以在服务平台参与各种活动。\n但由于您不是会员,所有活动的结果对您都是无效的。";
+            $templet = WechatAutoReplyTempletService::textTemplet($returnData, $content);
+            echo $templet;
+            \Yii::$app->end();
+        }
+        $content = sprintf("尊敬的用户代号:%s\n",$userInfo['user_id']);
+        $content.="您可以享受本服务平台提供的各种服务。\n目前只提供抽现金功能，资金要累积到100元人民币才可以提现哦。\n加油吧。其它功能陆续开发中，敬请期待！";
+        $templet = WechatAutoReplyTempletService::textTemplet($returnData, $content);
+        echo $templet;
     }
 }
