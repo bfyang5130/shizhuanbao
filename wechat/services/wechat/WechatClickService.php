@@ -102,13 +102,10 @@ class WechatClickService
                 $sqlstring = "'{$userInfo['user_id']}','{$money}','{$ip}',@outstates,@outremark";
                 $command = $connection->createCommand("CALL p_lotteryMoney(" . $sqlstring . ")");
                 $command->execute();
-                $outresults = $connection->createCommand("select @outstates as states,@outremark as remark")->query();
+                $outresults = $connection->createCommand("select @outstates as states,@outremark as remark")->queryOne();
                 $outresult = array();
-                foreach ($outresults as $key => $value) {
-                    $outresult['states'] = $value['states'];
-                    $outresult['remark'] = $value['remark'];
-                    break;
-                }
+                $outresult['states'] = $outresults['states'];
+                $outresult['remark'] = $outresults['remark'];
                 if ($outresult['states'] == '1') {
                     $content=sprintf("恭喜您,代号：%s。您抽中了%s元。",$userInfo['user_id'],$money);
                     \Yii::$app->cache->set($isHaveLotteyToday,1);
