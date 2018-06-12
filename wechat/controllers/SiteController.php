@@ -45,12 +45,11 @@ class SiteController extends Controller
      */
     public function actionCommand()
     {
-        echo 11;exit;
         //使用微信服务来处理信息
         $wechat=\Yii::$app->wechat;
         $menu=[
                 [
-                    "name"=>"加入联盟",
+                    "name"=>"联盟",
                      "sub_button"=>[
                          ["type"=>"click","name"=>"注册会员","key"=>"weixin_joinus"],
                          ["type"=>"click","name"=>"会员权利","key"=>"weixin_right"]
@@ -65,12 +64,12 @@ class SiteController extends Controller
                     ]
                 ],
                 [
-                    "name"=>"查询",
+                    "name"=>"发现",
                     "sub_button"=>[
-                        ["type"=>"click","name"=>"今日抽奖","key"=>"weixin_todaylottery"],
-                        ["type"=>"click","name"=>"扫一扫","key"=>"weixin_scan"],
-                        ["type"=>"click","name"=>"订单","key"=>"weixin_orderstatus"],
-                        ["type"=>"click","name"=>"资产","key"=>"weixin_account"]
+                        ["type"=>"click","name"=>"查资产","key"=>"weixin_account"],
+                        ["type"=>"click","name"=>"今日公告","key"=>"weixin_notice"],
+                        ["type"=>"click","name"=>"申请提现","key"=>"weixin_tixian"],
+                        ["type"=>"click","name"=>"充值","key"=>"weixin_chongzhi"]
                     ]
                 ]
         ];
