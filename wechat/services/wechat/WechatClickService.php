@@ -248,8 +248,8 @@ class WechatClickService
             echo $templet;
             \Yii::$app->end();
         }
-        $content = sprintf("尊敬的用户代号:%s\n",$userInfo['user_id']);
-        $content.="您可以享受本服务平台提供的各种服务。\n目前只提供抽现金功能，资金要累积到100元人民币才可以提现哦。\n加油吧。其它功能陆续开发中，敬请期待！";
+        $content = sprintf("尊敬的代号:%s\n",$userInfo['user_id']);
+        $content.="您可享受本平台提供的服务。\n目前只提供抽现金功能\n资金要累积到100元人民币才可以提现哦。\n加油吧！\n其它功能陆续开发中，敬请期待！";
         $templet = WechatAutoReplyTempletService::textTemplet($returnData, $content);
         echo $templet;
     }
