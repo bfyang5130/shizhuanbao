@@ -118,7 +118,6 @@ class WechatClickService
             } catch (Exception $e) {
                 \Yii::error($e);
                 $content=sprintf("代号：%s，神说：想中奖？服务器都被外星人T飞了！");
-                return array(0 => false, "1" => $e);
             }
         } else {
             $content = sprintf("今天总的抽奖次数100次已经被抽完了啦！明天加油哦，代号：%s",$userInfo['user_id']);
