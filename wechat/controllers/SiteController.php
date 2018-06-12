@@ -45,6 +45,7 @@ class SiteController extends Controller
      */
     public function actionCommand()
     {
+        echo 11;exit;
         //使用微信服务来处理信息
         $wechat=\Yii::$app->wechat;
         $menu=[
